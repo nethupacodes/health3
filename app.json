@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Health Mate",
+    "slug": "health-mate",
+    "scheme": "healthmate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.example.healthmate",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "Health Mate reads your steps, heart rate, sleep, calories and blood oxygen from Apple Health to show your wellness summary. Nothing is read until you connect.",
+        "NSHealthUpdateUsageDescription": "Health Mate does not write to Apple Health."
+      }
+    },
+    "android": {
+      "package": "com.example.healthmate",
+      "permissions": [
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_DISTANCE",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.READ_OXYGEN_SATURATION",
+        "android.permission.health.READ_EXERCISE"
+      ]
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      ["expo-image-picker", { "photosPermission": "Health Mate uses your photos for your profile picture and doctor photos." }],
+      "react-native-health",
+      "expo-health-connect",
+      ["expo-build-properties", { "android": { "compileSdkVersion": 34, "targetSdkVersion": 34, "minSdkVersion": 26 } }]
+    ]
+  }
+}
